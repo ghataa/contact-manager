@@ -4,6 +4,11 @@ const Context = React.createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "ADD_CONTACT":
+      return {
+        ...state,
+        contacts: [action.payload, ...state.contacts]
+      };
     case "DELETE_CONTACT":
       return {
         ...state,
